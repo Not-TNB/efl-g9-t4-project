@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@100;400;700&display=swap');
+
+html, body { width: 100%; height: 100%; margin: 0;}
+
+body {
+    background: url('Background.jpg') rgba(0, 0, 0, 0.2) no-repeat center center fixed;
+    background-blend-mode: multiply;
+    background-size: cover;
+    color: white;
+    font-size: 1.7em;
+    font-family: 'Urbanist';
+    font-weight: 400;
+    text-align: center;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+h1, h2 {
+    font-weight: 400;
+}
+
+h2 {
+    font-size: 1.2em;
+}
+
+#title {
+    height: auto;
+    margin: 2% 5% 0 5%;
+    font-size: 2em;
+    font-weight: 700;
+}
+
+#container {
+    height: 40vh;
+    width: 100vw;
+    display: grid;
+    top: auto;
+    justify-content: center; 
+    align-content: center; 
+    grid-auto-columns: 1fr; 
+    grid-template-columns: repeat(4, 1fr); 
+    grid-template-rows: 1fr; 
+    gap: 0; 
+    grid-template-areas: 
+        'changi gardens orchard mbs'; 
+    position: relative;
+    margin: auto;
+    margin-bottom: 2em;
+}
+
+#container button {
+    color: white;
+    font-family: 'Urbanist';
+    font-size: 1em;
+    margin: auto;
+    height: 85%;
+    width: 85%;
+    background-blend-mode: multiply;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    flex-direction: column;
+    border-radius: 0.5em;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    border: 0.2em solid white;
+    transition: all 0.2s;
+}
+
+#container button:hover{
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
+    transition: all 0.2s;
+    height: 90%;
+    width: 90%;
+}
+
+#container button::after {
+    background-blend-mode: multiply;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.3;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;      
+    content: '';
+    transition: all 0.2s;
+    border-radius: 0.25em;
+}
+
+#container button:hover::after {
+    opacity: 1;
+    transition: all 0.2s;
+}
+
+#container button h1, #container button h2 { letter-spacing: 0.15em; margin-right: -0.15em; }
+#container button h2 { margin-top: -1.2em; }
+
+#changi::after { background: url('Changi.jpg') rgba(0, 0, 0, 0.5); }
+#gardens::after { background: url('Gardens.jpg') rgba(0, 0, 0, 0.5); }
+#orchard::after { background: url('Orchard.jpg') rgba(0, 0, 0, 0.5); }
+#mbs::after { background: url('MBS.jpg') rgba(0, 0, 0, 0.5); }
+
+#footer {
+    width: 100%;
+    text-align: center;
+    padding: 1em 0;
+    margin-bottom: 0;
+    font-size: 1.5em;
+}
+
+#desc {
+    margin: 0 5%;
+    font-size: 0.5em;
+}
+
+.acrylic {
+    position: relative;
+    background: rgba(0, 0, 0, 0.5);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+}
+
+#image {
+    background-position: center;
+    background-size: cover;
+    margin: auto 15% 2em 15%;
+    padding: 3em 0;
+    border: 0.2em solid white;
+    border-radius: 0.25em;
+    font-size: 1.2em;
+}
+
+@media (max-width: 1200px) {
+    body { font-size: 1.4em; }
+}
+
+@media (max-width: 1100px) {
+    #container {
+        grid-template-columns: repeat(2, 1fr); 
+        grid-template-rows: repeat(2, 1fr); 
+        grid-template-areas: 
+            'changi gardens'
+            'orchard mbs';  
+    }
+}
+
+@media (max-width: 900px) {
+    body { font-size: 1em; }
+}
+
+@media (max-width: 500px) {
+    #container {
+        height: 70vh;
+        grid-template-columns: 1fr; 
+        grid-template-rows: repeat(4, 1fr); 
+        grid-template-areas: 
+            'changi'
+            'gardens'
+            'orchard'
+            'mbs';
+    }
+}
