@@ -8,7 +8,7 @@ var img = document.getElementById('image')
 
 function adjust() {
     img.innerHTML = ''
-    img.style.height = '80vh'
+    img.style.width = '60vw'
     img.style.aspectRatio = '1.414 / 1'
     img.style.padding = '0'
     img.style.margin = 'auto auto 2em auto'
